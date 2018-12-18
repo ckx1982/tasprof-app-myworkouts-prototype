@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -8,18 +9,15 @@ using Android.Widget;
 
 namespace Tasprof.App.MyWorkouts
 {
-    [Activity(Label = "", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "", Theme = "@style/Theme.MyTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
     {
-        TextView textMessage;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
         }
@@ -29,10 +27,10 @@ namespace Tasprof.App.MyWorkouts
             switch (item.ItemId)
             {
                 case Resource.Id.navigation_home:
-                    textMessage.SetText(Resource.String.title_home);
                     return true;
                 case Resource.Id.navigation_dashboard:
-                    textMessage.SetText(Resource.String.title_dashboard);
+                    //Intent intent2 = new Intent(this, typeof(DashboardActivity));
+                    //StartActivity(intent2);
                     return true;
                             }
             return false;
