@@ -7,7 +7,7 @@
 	android:minWidth="25px"
 	android:minHeight="25px">
 	<ImageView
-		android:src="@mipmap/ic_launcher_round"
+		android:src="@mipmap/ic_account_circle"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/imageView1"

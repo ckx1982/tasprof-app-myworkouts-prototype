@@ -22,13 +22,14 @@
             android:baselineAlignBottom="false"
             android:layout_gravity="end" />
     </android.support.v7.widget.Toolbar>
-    
-     <android.support.v7.widget.ContentFrameLayout
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_gravity="fill_vertical"
-            android:layout_width="match_parent"
-            android:id="@+id/contentFrameLayout1" />
+	<android.support.v7.widget.ContentFrameLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_gravity="fill_vertical"
+		android:layout_width="match_parent"
+		android:id="@+id/contentFrameLayout1"
+		android:layout_margin="15dp"
+		android:elevation="20dp"/>
         
     <android.support.design.widget.BottomNavigationView
         android:minWidth="25dp"
