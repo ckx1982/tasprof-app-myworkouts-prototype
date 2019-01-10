@@ -10,10 +10,11 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V4.App;
 
 namespace Tasprof.App.MyWorkouts.Fragments
 {
-    public class DashboardFragment : Fragment
+    public class DashboardFragment : Android.Support.V4.App.Fragment
     {
         public override void OnCreate(Bundle savedInstanceState)
         {

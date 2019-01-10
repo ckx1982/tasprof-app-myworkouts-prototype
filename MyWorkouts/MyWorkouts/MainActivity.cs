@@ -4,8 +4,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Tasprof.App.MyWorkouts.Fragments;
 
 namespace Tasprof.App.MyWorkouts
 {
@@ -17,6 +19,7 @@ namespace Tasprof.App.MyWorkouts
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+            SupportFragmentManager.BeginTransaction().Replace(Resource.Id.contentFrameLayout1, new WorkoutsFragment()).Commit();
 
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
@@ -27,12 +30,14 @@ namespace Tasprof.App.MyWorkouts
             switch (item.ItemId)
             {
                 case Resource.Id.navigation_home:
+                    SupportFragmentManager.BeginTransaction().Replace(Resource.Id.contentFrameLayout1, new WorkoutsFragment()).Commit();
                     return true;
                 case Resource.Id.navigation_dashboard:
-                    //Intent intent2 = new Intent(this, typeof(DashboardActivity));
-                    //StartActivity(intent2);
+                    SupportFragmentManager.BeginTransaction().Replace(Resource.Id.contentFrameLayout1, new DashboardFragment()).Commit();
+
                     return true;
-                            }
+            }
+
             return false;
         }
     }
